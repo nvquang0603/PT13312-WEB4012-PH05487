@@ -13,7 +13,13 @@ class HelloController extends Controller
      */
     public function index()
     {
-        return view('hello');
+        return view('hello', [
+            'name' => 'Nguyễn Viết Quang',
+            'age' => '23',
+            'address' => 'KTX Mỹ Đình',
+            'phone' => '0353690011',
+            'homeTown' => 'Phú Thọ'
+        ]);
     }
 
     /**
