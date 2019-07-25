@@ -9,6 +9,6 @@ class ClassRoomController extends Controller
     public function index()
     {
         $classes = ClassRoom::all();
-        return view('classrooms.index', compact('classes'));
+        return view('admin.class', compact('classes'));
     }
 }
