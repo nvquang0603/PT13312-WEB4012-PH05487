@@ -13,6 +13,7 @@
                 <th scope="col">Họ tên</th>
                 <th scope="col">Địa chỉ</th>
                 <th scope="col">Trường</th>
+                <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -23,6 +24,10 @@
                     <td>{{$class->teacher_name}}</td>
                     <td>{{$class->major}}</td>
                     <td>{{$class->max_student}}</td>
+                    <td>
+                        <a href="{{route('classes.edit', $item -> id)}}">Sửa</a>
+                        <a href="">Xóa</a>
+                    </td>
                 </tr>
             @endforeach
             </tbody>

@@ -36,16 +36,29 @@
                             <th>ID</th>
                             <th>Mã lớp</th>
                             <th>Giáo viên</th>
+                            <th>Admin</th>
                             <th>Ngành</th>
                             <th>Sĩ số</th>
+                            <th>Actions</th>
                         </tr>
                         @foreach ($classes as $class)
                             <tr class="{{$class->id % 2 ? 'bg-danger' : 'bg-success'}}">
                                 <th scope="row">{{$class->id}}</th>
                                 <td>{{$class->name}}</td>
                                 <td>{{$class->teacher_name}}</td>
+                                <td>
+                                @if (count($class->admins))
+                                    @foreach($class->admins as $admin)
+                                            <p>{{$admin->name}}</p>
+                                    @endforeach
+                                @endif
+                                </td>
                                 <td>{{$class->major}}</td>
                                 <td>{{$class->max_student}}</td>
+                                <td>
+                                    <a href="{{route('classes.edit', $class -> id)}}">Sửa</a>
+                                    <a href="{{route('classes.delete', $class->id)}}">Xóa</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody></table>
